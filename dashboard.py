@@ -54,7 +54,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Main title
-st.markdown('<h1 class="main-header"> Mairam Attia Summary Amazon-Zappos Acquisition 2009 </h1>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-header"> Mairam Attia Summary of Amazon-Zappos Acquisition 2009 </h1>', unsafe_allow_html=True)
 st.markdown('<p style="text-align: center; font-size: 1.2rem; color: #666;">A Comprehensive Analysis of the $1.2B Strategic Acquisition</p>', unsafe_allow_html=True)
 
 # Sidebar for navigation
