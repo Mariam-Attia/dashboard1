@@ -34,13 +34,13 @@ st.markdown("""
         padding: 0.5rem;
         background: linear-gradient(90deg, #FF9900, #FFA500);
         border-radius: 10px;
-        color: white;
+        color: black;
     }
     .metric-card {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         padding: 1rem;
         border-radius: 10px;
-        color: white;
+        color: black;
         margin: 0.5rem 0;
     }
     .insight-box {
@@ -605,7 +605,7 @@ else:  # Key Insights & Interpretation
         recommendation = "High Risk of Failure ❌"
    
     st.markdown(f"""
-    <div style="background: {score_color}; color: white; padding: 1rem; border-radius: 10px; text-align: center;">
+    <div style="background: {score_color}; color: black; padding: 1rem; border-radius: 10px; text-align: center;">
         <h3>M&A Success Score: {total_score:.1f}/10</h3>
         <h4>{recommendation}</h4>
     </div>
