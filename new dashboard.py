@@ -492,14 +492,13 @@ elif page == "🌟 Innovation Timeline":
     except Exception as e:
         st.error(f"Error rendering timeline chart: {e}")
     
-    st.markdown("""
-    <div class="insight-box">
-        <h4>Innovation Highlights</h4>
-        <ul>
-            <li><strong>2007:</strong> 365-day return policy, 75% repeat customers</li>
-            <li><strong>2009:</strong> $1.2B Amazon acquisition, 10M shares</li>
-            <li><strong>2013:</strong> Holacracy for 1,500+ employees</li>[](https://www.sj-r.com/story/business/2015/05/16/inside-zappos-ceo-tony-hsieh/34547263007/)
-        </ul>
-    </div>
-    """, unsafe_allow_html=True)
-```
+ st.markdown("""
+<div class="insight-box">
+    <h4>Innovation Highlights</h4>
+    <ul>
+        <li><strong>2007:</strong> 365-day return policy, 75% repeat customers</li>
+        <li><strong>2009:</strong> $1.2B Amazon acquisition, 10M shares</li>
+        <li><strong>2013:</strong> Holacracy for 1,500+ employees</li>
+    </ul>
+</div>
+""", unsafe_allow_html=True)
