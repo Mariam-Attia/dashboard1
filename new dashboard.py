@@ -1,3 +1,4 @@
+```python
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -96,7 +97,7 @@ def load_data():
         'Customer_Satisfaction': [85, 87, 90, 92, 94, 95, 96, 97, 98, 98, 98, 98, 97, 96, 95, 95, 96]
     })
     
-    # Holacracy impact data (aligned with)[](https://www.sj-r.com/story/business/2015/05/16/inside-zappos-ceo-tony-hsieh/34547263007/)
+    # Holacracy impact data (aligned with)
     holacracy_data = pd.DataFrame({
         'Period': ['Pre-Holacracy (2012)', 'Announcement (2013)', 'Implementation (2014)', 'Transition (2015)', 'Stabilization (2016)'],
         'Employee_Satisfaction': [8.5, 7.8, 6.2, 5.8, 6.8],
@@ -113,7 +114,7 @@ def load_data():
         'Impact_Score': [9.3, 8.9, 7.8, 9.6, 7.5, 8.2, 8.1, 8.3]
     })
     
-    # Innovation timeline (aligned with)[](https://www.untitledleader.com/lessons-in-leadership/the-legacy-of-tony-hsieh-lessons-in-leadership-and-entrepreneurship/)
+    # Innovation timeline (aligned with)
     innovation_timeline = pd.DataFrame({
         'Year': [1999, 2000, 2005, 2007, 2009, 2010, 2013, 2015],
         'Innovation': ['Zappos Founded', 'Hsieh Becomes CEO', 'Free Shipping', '365-Day Returns', 
@@ -189,7 +190,7 @@ if page == "🏠 Executive Summary":
         st.markdown("""
         <div class="leadership-principle">
             <strong>Holacracy (2013)</strong><br>
-            Self-management system for 1,500+ employees[](https://www.sj-r.com/story/business/2015/05/16/inside-zappos-ceo-tony-hsieh/34547263007/)
+            Self-management system for 1,500+ employees
         </div>
         <div class="leadership-principle">
             <strong>The Offer</strong><br>
@@ -319,7 +320,7 @@ elif page == "⚡ Holacracy Experiment":
     
     st.markdown("""
     <div class="quote-box">
-        "We want to scale Zappos' culture without bureaucracy." <br><strong>- Tony Hsieh</strong>[](https://www.sj-r.com/story/business/2015/05/16/inside-zappos-ceo-tony-hsieh/34547263007/)
+        "We want to scale Zappos' culture without bureaucracy." <br><strong>- Tony Hsieh</strong>
     </div>
     """, unsafe_allow_html=True)
     
@@ -348,7 +349,7 @@ elif page == "🎯 Leadership Style":
     
     st.markdown("""
     <div class="quote-box">
-        "Chase the vision, not the money; the money will follow." <br><strong>- Tony Hsieh</strong>[](https://www.untitledleader.com/lessons-in-leadership/the-legacy-of-tony-hsieh-lessons-in-leadership-and-entrepreneurship/)
+        "Chase the vision, not the money; the money will follow." <br><strong>- Tony Hsieh</strong>
     </div>
     """, unsafe_allow_html=True)
     
@@ -422,7 +423,7 @@ elif page == "🔍 Interpretations":
             <ul>
                 <li><strong>Culture:</strong> 97% retention via The Offer</li>
                 <li><strong>Service:</strong> 98% customer satisfaction</li>
-                <li><strong>Innovation:</strong> $350M Downtown Project</li>[](https://www.untitledleader.com/lessons-in-leadership/the-legacy-of-tony-hsieh-lessons-in-leadership-and-entrepreneurship/)
+                <li><strong>Innovation:</strong> $350M Downtown Project</li>
             </ul>
         </div>
         <div class="negative-metric">
@@ -457,13 +458,13 @@ elif page == "📚 Leadership Legacy":
     
     st.markdown("""
     <div class="quote-box">
-        "Your culture is your brand." <br><strong>- Tony Hsieh</strong>[](https://www.untitledleader.com/lessons-in-leadership/the-legacy-of-tony-hsieh-lessons-in-leadership-and-entrepreneurship/)
+        "Your culture is your brand." <br><strong>- Tony Hsieh</strong>
     </div>
     """, unsafe_allow_html=True)
     
     st.subheader("Lasting Impact")
     st.markdown("""
-    Tony Hsieh’s legacy lies in proving culture drives business success. His $350M Downtown Project created 1,000+ jobs, revitalizing Las Vegas. Zappos Insights influenced 500+ companies, generating $50M+ revenue.[](https://www.untitledleader.com/lessons-in-leadership/the-legacy-of-tony-hsieh-lessons-in-leadership-and-entrepreneurship/)
+    Tony Hsieh’s legacy lies in proving culture drives business success. His $350M Downtown Project created 1,000+ jobs, revitalizing Las Vegas. Zappos Insights influenced 500+ companies, generating $50M+ revenue.
     """)
     
     try:
@@ -492,13 +493,14 @@ elif page == "🌟 Innovation Timeline":
     except Exception as e:
         st.error(f"Error rendering timeline chart: {e}")
     
- st.markdown("""
-<div class="insight-box">
-    <h4>Innovation Highlights</h4>
-    <ul>
-        <li><strong>2007:</strong> 365-day return policy, 75% repeat customers</li>
-        <li><strong>2009:</strong> $1.2B Amazon acquisition, 10M shares</li>
-        <li><strong>2013:</strong> Holacracy for 1,500+ employees</li>
-    </ul>
-</div>
-""", unsafe_allow_html=True)
+    st.markdown("""
+    <div class="insight-box">
+        <h4>Innovation Highlights</h4>
+        <ul>
+            <li><strong>2007:</strong> 365-day return policy, 75% repeat customers</li>
+            <li><strong>2009:</strong> $1.2B Amazon acquisition, 10M shares</li>
+            <li><strong>2013:</strong> Holacracy for 1,500+ employees</li>
+        </ul>
+    </div>
+    """, unsafe_allow_html=True)
+```
