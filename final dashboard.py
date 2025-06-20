@@ -561,4 +561,262 @@ elif page == "🎭 Culture & Values":
    
     # Values importance rating
     values_data = {
-        'Value': [v['Value WORK IN PROGRESS
+        'Value': [v['Value'][:20] + "..." if len(v['Value']) > 20 else v['Value'] for v in core_values],
+        'Employee_Rating': [9.2, 8.8, 9.5, 8.5, 8.7, 9.1, 9.3, 8.2, 8.9, 9.0],
+        'Implementation_Score': [9.5, 8.2, 9.8, 8.0, 8.5, 9.0, 9.2, 8.8, 8.7, 9.1]
+    }
+   
+    fig_values = go.Figure()
+    fig_values.add_trace(go.Bar(name='Employee Rating', x=values_data['Value'],
+                               y=values_data['Employee_Rating'], marker_color='lightcoral'))
+    fig_values.add_trace(go.Bar(name='Implementation Score', x=values_data['Value'],
+                               y=values_data['Implementation_Score'], marker_color='skyblue'))
+    fig_values.update_layout(
+        title='Core Values: Employee Rating vs Implementation',
+        xaxis_tickangle=-45,
+        barmode='group',
+        xaxis_title="Core Values",
+        yaxis_title="Score (1-10)"
+    )
+    st.plotly_chart(fig_values, use_container_width=True)
+   
+    # Culture initiatives
+    st.markdown('<h3 class="section-header">Culture Initiatives</h3>', unsafe_allow_html=True)
+   
+    col1, col2 = st.columns(2)
+   
+    with col1:
+        st.markdown("### 🎉 Fun & Engagement")
+        culture_initiatives = [
+            "Nap rooms and relaxation areas",
+            "Petting zoo and animal therapy",
+            "Karaoke and game rooms",
+            "Theme days (Bald & Blue Day)",
+            "Office parades and celebrations",
+            "Popcorn machine robot",
+            "Adult ball pit"
+        ]
+       
+        for initiative in culture_initiatives:
+            st.write(f"• {initiative}")
+   
+    with col2:
+        st.markdown("### 📚 Learning & Development")
+        learning_initiatives = [
+            "4-week comprehensive onboarding",
+            "Culture Book publication",
+            "Peer coaching programs",
+            "Personal development budgets",
+            "Cross-functional training",
+            "Leadership development circles",
+            "Continuous feedback systems"
+        ]
+       
+        for initiative in learning_initiatives:
+            st.write(f"• {initiative}")
+   
+    # The Offer program
+    st.markdown('<h3 class="section-header">"The Offer" Program</h3>', unsafe_allow_html=True)
+   
+    offer_data = {
+        'Year': [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
+        'Offer_Amount': [1000, 2000, 2000, 3000, 3000, 4000, 4000, 5000],
+        'Acceptance_Rate': [8, 12, 10, 15, 18, 22, 25, 20]
+    }
+   
+    fig_offer = make_subplots(specs=[[{"secondary_y": True}]])
+   
+    fig_offer.add_trace(
+        go.Bar(x=offer_data['Year'], y=offer_data['Offer_Amount'], name='Offer Amount ($)',
+               marker_color='gold'),
+        secondary_y=False,
+    )
+   
+    fig_offer.add_trace(
+        go.Scatter(x=offer_data['Year'], y=offer_data['Acceptance_Rate'],
+                  mode='lines+markers', name='Acceptance Rate (%)', line=dict(color='red')),
+        secondary_y=True,
+    )
+   
+    fig_offer.update_layout(title='"The Offer" Program Evolution')
+    fig_offer.update_yaxes(title_text="Offer Amount ($)", secondary_y=False)
+    fig_offer.update_yaxes(title_text="Acceptance Rate (%)", secondary_y=True)
+   
+    st.plotly_chart(fig_offer, use_container_width=True)
+   
+    st.markdown("""
+    **"The Offer"** was Hsieh's radical hiring filter: new employees were paid thousands of dollars
+    to quit after training if they didn't feel aligned with Zappos culture. This ensured only
+    truly committed culture-fit employees remained.
+    """)
+
+elif page == "🎯 Leadership Principles":
+    st.markdown('<h2 class="section-header">Leadership Principles</h2>', unsafe_allow_html=True)
+   
+    st.markdown("""
+    Tony Hsieh's leadership was guided by principles that prioritized vision, culture, and long-term impact
+    over short-term gains. These principles shaped Zappos into a culture-driven powerhouse.
+    """)
+   
+    # Leadership principles
+    principles = [
+        {
+            "Principle": "Culture as Strategy",
+            "Description": "Embed culture into every business decision to drive sustainable success."
+        },
+        {
+            "Principle": "Empower Employees",
+            "Description": "Give employees autonomy and trust to make decisions aligned with company values."
+        },
+        {
+            "Principle": "Obsess Over Customers",
+            "Description": "Prioritize customer experience above all else to build loyalty and trust."
+        },
+        {
+            "Principle": "Embrace Experimentation",
+            "Description": "Encourage bold risks and learn from failures to foster innovation."
+        },
+        {
+            "Principle": "Lead with Purpose",
+            "Description": "Align actions with a higher purpose to inspire teams and stakeholders."
+        }
+    ]
+   
+    for principle in principles:
+        st.markdown('<div class="leadership-principle">', unsafe_allow_html=True)
+        st.markdown(f"**{principle['Principle']}**: {principle['Description']}")
+        st.markdown('</div>', unsafe_allow_html=True)
+   
+    st.markdown('<div class="quote-box">', unsafe_allow_html=True)
+    st.markdown('💭 **"Chase the vision, not the money; the money will end up following you."**')
+    st.markdown('</div>', unsafe_allow_html=True)
+   
+    # Leadership effectiveness over time
+    st.markdown('<h3 class="section-header">Leadership Evolution Timeline</h3>', unsafe_allow_html=True)
+   
+    evolution_data = {
+        'Year': [2000, 2003, 2006, 2009, 2012, 2015, 2018, 2020],
+        'Vision_Clarity': [7, 8, 9, 9, 8, 7, 6, 8],
+        'Employee_Satisfaction': [6, 7, 8, 9, 8, 7, 6, 7],
+        'Innovation_Index': [5, 6, 7, 8, 9, 8, 7, 8],
+        'Market_Impact': [4, 6, 8, 9, 9, 8, 7, 9]
+    }
+   
+    fig_evolution = go.Figure()
+   
+    for metric in ['Vision_Clarity', 'Employee_Satisfaction', 'Innovation_Index', 'Market_Impact']:
+        fig_evolution.add_trace(go.Scatter(
+            x=evolution_data['Year'],
+            y=evolution_data[metric],
+            mode='lines+markers',
+            name=metric.replace('_', ' '),
+            line=dict(width=3)
+        ))
+   
+    fig_evolution.update_layout(
+        title="Leadership Effectiveness Evolution (2000-2020)",
+        xaxis_title="Year",
+        yaxis_title="Effectiveness Score (1-10)",
+        hovermode='x unified'
+    )
+   
+    st.plotly_chart(fig_evolution, use_container_width=True)
+
+elif page == "🔍 Interpretation & Insights":
+    st.markdown('<h2 class="section-header">Leadership Analysis & Insights</h2>', unsafe_allow_html=True)
+   
+    # Leadership effectiveness analysis
+    st.markdown('<h3 class="section-header">Leadership Effectiveness Matrix</h3>', unsafe_allow_html=True)
+   
+    effectiveness_data = {
+        'Leadership_Area': ['Vision Setting', 'Culture Building', 'Innovation', 'Employee Engagement',
+                           'Customer Focus', 'Change Management', 'Risk Taking', 'Communication'],
+        'Effectiveness_Score': [9.5, 10, 8.5, 9, 10, 7, 8, 9],
+        'Difficulty_Level': [7, 9, 8, 8, 6, 10, 9, 5],
+        'Impact_on_Business': [9, 10, 8, 9, 10, 7, 8, 8]
+    }
+   
+    # Effectiveness vs Difficulty scatter plot
+    fig_matrix = px.scatter(effectiveness_data, x='Difficulty_Level', y='Effectiveness_Score',
+                          size='Impact_on_Business', hover_name='Leadership_Area',
+                          title="Leadership Effectiveness vs Implementation Difficulty")
+    fig_matrix.update_layout(
+        xaxis_title="Implementation Difficulty (1-10)",
+        yaxis_title="Leadership Effectiveness (1-10)"
+    )
+    st.plotly_chart(fig_matrix, use_container_width=True)
+   
+    # SWOT Analysis
+    st.markdown('<h3 class="section-header">SWOT Analysis of Hsieh\'s Leadership</h3>', unsafe_allow_html=True)
+   
+    col1, col2 = st.columns(2)
+   
+    with col1:
+        st.markdown("### 💪 Strengths")
+        strengths = [
+            "Exceptional culture building capabilities",
+            "Customer-centric vision and execution",
+            "Employee empowerment and engagement",
+            "Innovation and experimentation mindset",
+            "Authentic and transparent leadership style"
+        ]
+        for strength in strengths:
+            st.write(f"✅ {strength}")
+       
+        st.markdown("### 🚀 Opportunities")
+        opportunities = [
+            "Global expansion of culture model",
+            "Technology integration in culture building",
+            "Leadership development programs",
+            "Industry thought leadership",
+            "Cultural consulting services"
+        ]
+        for opportunity in opportunities:
+            st.write(f"🔍 {opportunity}")
+   
+    with col2:
+        st.markdown("### ⚠️ Weaknesses")
+        weaknesses = [
+            "Over-reliance on cultural fit vs. skills",
+            "Holacracy implementation challenges",
+            "Scalability issues with radical approaches",
+            "High employee turnover during transitions",
+            "Potential for cultural exclusion"
+        ]
+        for weakness in weaknesses:
+            st.write(f"❌ {weakness}")
+       
+        st.markdown("### 🎯 Threats")
+        threats = [
+            "Market conditions affecting culture investments",
+            "Competitor adoption of similar strategies",
+            "Regulatory challenges to radical policies",
+            "Economic downturns impacting fun culture",
+            "Generational changes in work preferences"
+        ]
+        for threat in threats:
+            st.write(f"⚡ {threat}")
+   
+    # Key Success Factors
+    st.markdown('<h3 class="section-header">Critical Success Factors</h3>', unsafe_allow_html=True)
+   
+    success_factors = {
+        'Factor': ['Cultural Authenticity', 'Leadership Commitment', 'Employee Buy-in',
+                  'Customer Results', 'Financial Performance', 'Innovation Culture'],
+        'Importance': [10, 9, 8, 9, 7, 8],
+        'Hsieh_Performance': [10, 9, 7, 10, 8, 9]
+    }
+   
+    fig_success = go.Figure()
+    fig_success.add_trace(go.Bar(name='Importance', x=success_factors['Factor'],
+                                y=success_factors['Importance'], marker_color='lightgreen'))
+    fig_success.add_trace(go.Bar(name='Hsieh Performance', x=success_factors['Factor'],
+                                y=success_factors['Hsieh_Performance'], marker_color='darkgreen'))
+    fig_success.update_layout(
+        title='Critical Success Factors: Importance vs Hsieh Performance',
+        xaxis_tickangle=-45,
+        barmode='group',
+        xaxis_title="Success Factors",
+        yaxis_title="Score (1-10)"
+    )
+    st.plotly_chart(fig_success, use_container_width=True)
